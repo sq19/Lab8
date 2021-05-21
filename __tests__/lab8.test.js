@@ -1,6 +1,6 @@
 describe('Basic user flow for SPA ', () => {
   beforeAll(async () => {
-    await page.goto('http://127.0.0.1:5501');
+    await page.goto('http://127.0.0.1:5500');
     await page.waitForTimeout(500);
   });
 
@@ -31,7 +31,7 @@ describe('Basic user flow for SPA ', () => {
     // implement test3: Clicking on the first journal entry should update the URL to contain “/#entry1”
     await page.click('main :nth-child(1)');
     const url = page.url();
-    expect(url).toMatch('http://127.0.0.1:5501/#entry1');
+    expect(url).toMatch('http://127.0.0.1:5500/#entry1');
   });
 
   it('Test4: On first Entry page - checking page header title', async () => {
@@ -79,7 +79,7 @@ describe('Basic user flow for SPA ', () => {
     // implement test7: Clicking on the settings icon should update the URL to contain “/#settings”
     await page.click('header > img');
     const url = page.url();
-    expect(url).toMatch('http://127.0.0.1:5501/#settings');
+    expect(url).toMatch('http://127.0.0.1:5500/#settings');
   });
 
   it('Test8: On Settings page - checking page header title', async () => {
@@ -102,14 +102,14 @@ describe('Basic user flow for SPA ', () => {
     // implement test10: Clicking on the back button should update the URL to contain ‘/#entry1’
     await page.goBack();
     const url = page.url();
-    expect(url).toMatch('http://127.0.0.1:5501/#entry1');
+    expect(url).toMatch('http://127.0.0.1:5500/#entry1');
   });
 
   // define and implement test11: Clicking the back button once should bring the user back to the home page
   it('Test11: Clicking the back button, new URL should be /', async() => {
     await page.goBack();
     const url = page.url();
-    expect(url).toMatch('http://127.0.0.1:5501/');
+    expect(url).toMatch('http://127.0.0.1:5500/');
   });
 
   // define and implement test12: When the user if on the homepage, the header title should be “Journal Entries”
@@ -132,7 +132,7 @@ describe('Basic user flow for SPA ', () => {
   it('Test14: Clicking second <journal-entry>, new URL should contain /#entry2', async () => {
     await page.click('main :nth-child(2)');
     const url = page.url();
-    expect(url).toMatch('http://127.0.0.1:5501/#entry2');
+    expect(url).toMatch('http://127.0.0.1:5500/#entry2');
   });
 
   // define and implement test15: Verify the title is current when clicking on the second entry
@@ -160,14 +160,14 @@ describe('Basic user flow for SPA ', () => {
   it('Test17: Clicking header, new URL should contain "/"', async () => {
     await page.click('header > h1');
     const url = page.url();
-    expect(url).toMatch('http://127.0.0.1:5501/');
+    expect(url).toMatch('http://127.0.0.1:5500/');
   });
 
   // create your own test 18
   it('Test18: Clicking third <journal-entry>, new URL should contain /#entry3', async () => {
     await page.click('main :nth-child(3)');
     const url = page.url();
-    expect(url).toMatch('http://127.0.0.1:5501/#entry3');
+    expect(url).toMatch('http://127.0.0.1:5500/#entry3');
   });
 
   // create your own test 19
