@@ -15,9 +15,13 @@ Yes. This would only require testing a single component of the messaging applica
 
 4. What do you expect to happen if we run our puppeteer tests with the field “headless” set to true?
 
-
+The tests would run without the browser UI.
 
 5. What would your beforeAll callback look like if you wanted to start from the settings page before every test case?
 
-
+```
+beforeAll(async () => {
+    await page.click('header > img');
+});
+```
 
